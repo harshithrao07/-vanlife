@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function About() {
-    return(
+    return (
         <main className="about--main">
             <img className="about--image" src="/images/about.jpg" />
             <div className="about--texts">

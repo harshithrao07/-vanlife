@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     font-family: 'Inter';
-    background-color: #FFF7ED;
+    background-color: #FFF2D8;
 }
 
 body::-webkit-scrollbar {
@@ -22,6 +23,11 @@ h1 {
     font-size: 3.5rem;
 }
 
+h2 {
+    font-weight: 700;
+    font-size: 3.2rem;
+}
+
 p {
     font-weight: 500;
     font-size: 1.2rem;
@@ -29,7 +35,7 @@ p {
 
 footer {
     background-color: #252525;
-    height: 110px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,16 +44,22 @@ footer {
 
 footer p {
     font-size: 1rem;
+    margin: 0;
 }
 
-.navbar{
-    height: 110px;
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar {
+    height: 100px;
     display: flex;
     align-items: center;
     padding: 0 50px;
 }
 
-.navbar--sitelogo{
+.navbar--sitelogo {
     color: black;
     margin-right: auto;
     text-transform: uppercase;
@@ -84,13 +96,18 @@ header a:hover {
     color: white;
 }
 
-.home--title{
-    margin:0;
+.home--main>p {
+    color: rgb(217, 209, 209);
+}
+
+.home--title {
+    margin: 0;
 }
 
 .home--para {
     margin-top: 30px;
 }
+
 .home--link {
     background-color: #FF8C38;
     padding: 15px 50px;
@@ -99,15 +116,119 @@ header a:hover {
     font-weight: 700;
     border-radius: 5px;
     width: fit-content;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-.about--texts{
-    padding:10px 50px;
+.about--texts {
+    padding: 0 50px;
+    margin: 70px 0;
 }
 
-.about--image{
+.about--texts>p {
+    color: rgb(50, 49, 49);
+}
+
+.about--image {
     width: 100%;
 }
 
+.vans--main {
+    padding: 0 70px;
+}
 
+.vans--tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.van--tile {
+    width: 400px;
+    padding: 10px;
+}
+
+.van--tile:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.van--img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.van--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.van--info>h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.van--info>p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.van--type {
+    margin-top: 0;
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 5px;
+    color: white;
+}
+
+.simple {
+    background-color: #E17654;
+}
+
+.rugged {
+    background-color: #115E59;
+}
+
+.luxury {
+    background-color: #161616;
+}
+
+.vandetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 75px 0 125px 0;
+}
+
+.vandetails--imgParent {
+    display: flex;
+    justify-content: center;
+}
+
+.vandetails--img {
+    width: 75%;
+    border-radius: 10px;
+}
+
+.vandetails--description {
+    padding: 50px 200px 0 50px;
+}
+
+.vandetails--description>h2 {
+    margin-bottom: 20px;
+}
+
+.vandetails--price {
+    margin-bottom: 50px;
+}
+
+.vandetails--para {
+    color: rgb(50, 49, 49);
+    margin-bottom: 50px;
+}
