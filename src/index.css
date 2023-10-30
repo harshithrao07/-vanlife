@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    line-height: 1.5;
 }
 
 html,
 body {
+    min-height: 100vh;
     margin: 0;
     font-family: 'Inter';
     background-color: #FFF2D8;
@@ -18,6 +20,12 @@ body {
     scrollbar-width: none;
 }
 
+.article {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 h1 {
     font-weight: 800;
     font-size: 3.5rem;
@@ -28,18 +36,29 @@ h2 {
     font-size: 3.2rem;
 }
 
+h3 {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
 p {
     font-weight: 500;
     font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+span {
+    font-weight: 500;
 }
 
 footer {
     background-color: #252525;
-    height: 100px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    margin-top: auto;
 }
 
 footer p {
@@ -53,32 +72,33 @@ a {
 }
 
 .navbar {
-    height: 100px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     padding: 0 50px;
+    justify-content: space-between;
 }
 
 .navbar--sitelogo {
     color: black;
-    margin-right: auto;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 2rem;
 }
 
-.navbar--links {
+
+header a {
+    text-decoration: none;
     color: #514d4d;
     font-weight: 600;
     margin: 0 20px;
 }
 
-header a {
-    text-decoration: none;
-}
-
-header a:hover {
-    text-decoration: underline;
+.active--link {
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+    color: #161616;
 }
 
 .home--main {
@@ -88,12 +108,13 @@ header a:hover {
     -o-background-size: cover;
     background-position: center top -90px;
     background-size: cover;
-    min-height: 500px;
     padding: 110px 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     color: white;
+    align-items: center;
+    text-align: center;
 }
 
 .home--main>p {
@@ -126,6 +147,7 @@ header a:hover {
 
 .about--texts>p {
     color: rgb(50, 49, 49);
+    margin-bottom: 50px;
 }
 
 .about--image {
@@ -186,24 +208,29 @@ header a:hover {
     width: fit-content;
     border-radius: 5px;
     color: white;
+    font-size: 1rem;
 }
 
-.simple {
+.Simple {
     background-color: #E17654;
 }
 
-.rugged {
+.Rugged {
     background-color: #115E59;
 }
 
-.luxury {
+.Luxury {
     background-color: #161616;
+}
+
+.vandetails--main {
+    padding: 0 70px;
 }
 
 .vandetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 75px 0 125px 0;
+    margin: 45px 0 125px 0;
 }
 
 .vandetails--imgParent {
@@ -217,11 +244,11 @@ header a:hover {
 }
 
 .vandetails--description {
-    padding: 50px 200px 0 50px;
+    padding: 25px 200px 0 50px;
 }
 
 .vandetails--description>h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .vandetails--price {
@@ -231,4 +258,91 @@ header a:hover {
 .vandetails--para {
     color: rgb(50, 49, 49);
     margin-bottom: 50px;
+}
+
+.hostvans--main {
+    padding: 0 70px;
+}
+
+.hostvan--tile {
+    display: flex;
+    background-color: white;
+    margin: 30px 0;
+    height: 200px;
+    align-items: center;
+    padding: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hostvan--imgParent {
+    max-width: 150px;
+    margin-right: 30px;
+}
+
+.hostvan--img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.hostvan--tile:hover {
+    background: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.hostvan--detailsParent{
+    background-color: white;
+    margin: 40px 100px;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.hostvan--details {
+    display: flex;
+    margin-bottom: 50px;
+}
+.hostvandetails--imgParent {
+    width: 350px;
+    margin-right: 40px;
+}
+
+
+.hostvandetails--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hostvandetails--info>* {
+    margin: 20px 0 10px;
+}
+
+.back-button {
+    margin: 30px 70px 0;
+}
+
+.host-van-detail-info {
+    line-height: 1.5;
+    padding: 10px 60px 0 18px;
+}
+
+.host-van-price {
+    padding: 0 60px 0 18px;
+}
+
+.host-van-price > span {
+    font-size: 1.3rem;
+    color: #4D4D4D;
+}
+
+.host-van-detail-image {
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 40px;
+    padding: 0 60px 0 18px;
 }
