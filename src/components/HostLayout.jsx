@@ -12,7 +12,7 @@ export default function HostLayout() {
 
     return(
         <>
-            <header style={{padding:"0 50px"}}>
+            <header className="hostlayout--nav">
                 <nav>
                     <NavLink end style={({ isActive }) => isActive ? styles : null} to=".">Dashboard</NavLink>
                     <NavLink style={({ isActive }) => isActive ? styles : null} to="income">Income</NavLink>

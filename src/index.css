@@ -1,14 +1,14 @@
 * {
     box-sizing: border-box;
-    line-height: 1.5;
 }
 
 html,
 body {
     min-height: 100vh;
     margin: 0;
-    font-family: 'Inter';
-    background-color: #FFF2D8;
+    font-family: 'Poppins', sans-serif;
+    background-color: #20242b;
+    color: white;
 }
 
 body::-webkit-scrollbar {
@@ -27,239 +27,592 @@ body {
 }
 
 h1 {
-    font-weight: 800;
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-weight: 700;
-    font-size: 3.2rem;
-}
-
-h3 {
-    font-weight: 500;
-    font-size: 2rem;
-}
-
-p {
-    font-weight: 500;
-    font-size: 1.2rem;
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
     line-height: 1.5;
 }
 
-span {
-    font-weight: 500;
+h3 {
+    font-family: 'DM Serif Display', serif;
+    margin-block: 10px;
 }
 
+p {
+    margin: 0;
+    line-height: 2;
+}
+
+span {
+    font-size: 20px;
+    color: rgb(148, 147, 147);
+}
+
+@media only screen and (min-width:2400px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 2.3rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1919px) and (min-width:1600px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1599px) and (min-width:1366px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1365px) and (min-width:1280px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1279px) and (min-width:1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:1023px) and (min-width:600px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 46px
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:599px) and (min-width:300px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .home--main {
+        text-align: center;
+    }
+
+    .home--texts {
+        margin-inline: auto;
+    }
+
+    .home--link {
+        font-size: 14px !important;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-rows: 1fr 200px;
+        margin-top: 50px;
+    }
+
+    .about--image--parent {
+        margin-top: 40px;
+    }
+
+    .about--image {
+        width: 50%;
+        border: 0 !important;
+    }
+
+    footer {
+        padding-inline: 10%;
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 20px !important;
+    }
+
+    .nav--links a {
+        font-size: 10px !important;
+    }
+
+    .navbar a {
+        margin-inline: 10px !important;
+    }
+
+    .navbar,
+    footer {
+        height: 50px !important;
+    }
+
+    .about--image--parent {
+        height: 50%;
+    }
+}
+
+@media only screen and (max-width:299px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    .home--main {
+        text-align: center;
+    }
+
+    .home--texts {
+        width: 100%;
+    }
+
+    .about--info {
+        display: grid;
+        grid-template-rows: 1fr 1fr
+    }
+
+    .navbar--sitelogo {
+        font-weight: bold;
+        font-size: 20px !important;
+    }
+
+    .nav--links a {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        margin-inline: 10px !important;
+    }
+}
+
+/* FOOTER */
 footer {
-    background-color: #252525;
-    min-height: 100px;
+    height: 125px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     margin-top: auto;
+    text-align: center;
 }
 
 footer p {
-    font-size: 1rem;
-    margin: 0;
+    padding-bottom: 1px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+footer a:hover {
+    border-bottom: 2px solid white;
 }
 
+/* NAVBAR */
 .navbar {
-    min-height: 100px;
+    height: 125px;
     display: flex;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 3%;
     justify-content: space-between;
 }
 
-.navbar--sitelogo {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 2rem;
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
-
-header a {
-    text-decoration: none;
-    color: #514d4d;
-    font-weight: 600;
-    margin: 0 20px;
+.navbar--sitelogo {
+    font-weight: bold;
+    font-size: 46px
 }
 
 .active--link {
     font-weight: bold;
     padding-bottom: 2px;
-    border-bottom: 2px solid black;
-    color: #161616;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.navbar a {
+    margin-inline: 20px;
+}
+
+.nav--links a {
+    font-size: 20px;
+}
+
+/* HOME PAGE */
+.home--page {
+    width: 100%;
 }
 
 .home--main {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url('/images/home--bg.png') no-repeat center center;
+    background: linear-gradient(0deg,
+            rgba(18, 34, 51, 0.46),
+            rgba(18, 34, 51, 0.46)),
+        url('/images/home--bg.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-position: center top -90px;
     background-size: cover;
-    padding: 110px 50px;
+    margin: 3% 5%;
+    padding: 10% 3%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: white;
-    align-items: center;
-    text-align: center;
+    border-radius: 40px;
+    border: 2px solid white;
 }
 
-.home--main>p {
-    color: rgb(217, 209, 209);
-}
-
-.home--title {
-    margin: 0;
+.home--texts {
+    width: 75%;
 }
 
 .home--para {
-    margin-top: 30px;
+    margin: 30px 0 50px;
 }
 
 .home--link {
-    background-color: #FF8C38;
-    padding: 15px 50px;
+    background-color: #20242b;
+    padding: 3% 5%;
     color: white;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
+    border-radius: 30px;
+    margin-inline: 0;
+    font-size: 26px;
+    border: 2px solid white;
     width: fit-content;
-    margin-top: 20px;
 }
+
+.home--link:hover {
+    background-color: #2f3237;
+}
+
+.home--about {
+    margin: 7% 5%;
+}
+
+.home--about--texts>p {
+    margin-block: 6%;
+}
+
+/* ABOUT */
+.about--main {
+    margin: 40px 100px;
+}
+
+.title--header {
+    height: 350px;
+    margin-bottom: 150px;
+    border-radius: 40px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.about--title {
+    background: url('/images/about.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center top -40px;
+    background-size: cover;
+}
+
+.title--header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 60px;
+    position: relative;
+    top: 100px;
+    border-radius: 40px;
+    background-color: #FFEAD0;
+    color: #20242b;
+    border: 2px solid black;
+}
+
+.title--header div a {
+    color: #20242b;
+    width: fit-content;
+}
+
+.title--header div a:hover {
+    border-bottom: 2px solid #20242b;
+}
+
 
 .about--texts {
-    padding: 0 50px;
-    margin: 70px 0;
+    padding-right: 7%;
 }
 
-.about--texts>p {
-    color: rgb(50, 49, 49);
-    margin-bottom: 50px;
+.about--image--parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
 }
 
 .about--image {
+    border-radius: 40px;
     width: 100%;
+    border: 2px solid white;
 }
 
+/* VANS */
 .vans--main {
-    padding: 0 70px;
+    margin: 40px 100px;
+}
+
+.vans--title {
+    background: url('/images/vans--bg.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center top -400px;
+    background-size: cover;
+}
+
+.filter-types {
+    margin-block: 20px;
+}
+
+.filter-types>button {
+    margin-inline: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-type {
+    background-color: #FFEAD0;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.clear-filter {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    padding-bottom: 1px;
+    border-bottom: 2px solid white;
+    color: white;
 }
 
 .vans--tiles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
-    margin-bottom: 50px;
+    margin-block: 50px;
 }
 
 .van--tile {
     width: 400px;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .van--tile:hover {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: scale(1.01);
 }
 
 .van--img {
     max-width: 100%;
-    border-radius: 10px;
-}
-
-.van--info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 600;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     margin-bottom: 15px;
 }
 
-.van--info>h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+.van--info {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.van--info>p {
-    font-size: 1rem;
-    margin-bottom: 0;
+.van--info>h3 {
+    font-size: 30px;
 }
 
 .van--type {
-    margin-top: 0;
-    padding: 10px 20px;
+    padding: 5px 15px;
     width: fit-content;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 .Simple {
     background-color: #E17654;
+    color: white;
 }
 
 .Rugged {
     background-color: #115E59;
+    color: white;
 }
 
 .Luxury {
     background-color: #161616;
+    color: white;
 }
 
+
+/* VANDETAILS */
 .vandetails--main {
-    padding: 0 70px;
+    margin: 40px 100px;
+}
+
+.vandetails--title {
+    background: url('/images/vandetails.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center top -900px;
+    background-size: cover;
 }
 
 .vandetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 45px 0 125px 0;
 }
 
 .vandetails--imgParent {
     display: flex;
     justify-content: center;
+    padding: 50px;
 }
 
 .vandetails--img {
-    width: 75%;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 40px;
 }
 
 .vandetails--description {
-    padding: 25px 200px 0 50px;
-}
-
-.vandetails--description>h2 {
-    margin-bottom: 10px;
-}
-
-.vandetails--price {
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
 }
 
 .vandetails--para {
-    color: rgb(50, 49, 49);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
+/* HOSTLAYOUT NAVBAR */
+
+.hostlayout--nav {}
+
+.hostlayout--nav nav a {
+    margin: 0 20px;
+}
+
+
+/* HOSTVANS LISTED */
 .hostvans--main {
     padding: 0 70px;
 }
@@ -295,7 +648,7 @@ header a {
 }
 
 
-.hostvan--detailsParent{
+.hostvan--detailsParent {
     background-color: white;
     margin: 40px 100px;
     padding: 50px;
@@ -306,6 +659,7 @@ header a {
     display: flex;
     margin-bottom: 50px;
 }
+
 .hostvandetails--imgParent {
     width: 350px;
     margin-right: 40px;
@@ -335,7 +689,7 @@ header a {
     padding: 0 60px 0 18px;
 }
 
-.host-van-price > span {
+.host-van-price>span {
     font-size: 1.3rem;
     color: #4D4D4D;
 }
@@ -345,4 +699,20 @@ header a {
     border-radius: 5px;
     margin-top: 40px;
     padding: 0 60px 0 18px;
+}
+
+/* ERROR PAGE */
+
+.error--main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 100px;
+}
+
+.error--main a {
+    padding: 20px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }

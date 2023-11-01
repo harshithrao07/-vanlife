@@ -15,6 +15,7 @@ import HostVanInfo from "./pages/host/hostVans/HostVanInfo"
 import HostVanPricing from "./pages/host/hostVans/HostVanPricing"
 import HostVanPhotos from "./pages/host/hostVans/HostVanPhotos"
 import "../server"
+import Error from "./pages/Error"
 
 export default function App() {
     return (
@@ -38,6 +39,7 @@ export default function App() {
                             <Route path="photos" element={<HostVanPhotos />} />
                         </Route>
                     </Route>
+                    <Route path="*" element={<Error />} />
                 </Route>
             </Routes>
         </BrowserRouter>

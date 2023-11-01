@@ -1,9 +1,11 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 
 export default function VanDetails() {
-    const params = useParams();
+    const params = useParams()
+    const location = useLocation()
+
     const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
@@ -12,29 +14,35 @@ export default function VanDetails() {
             .then(data => setVan(data.vans))
     }, [params.id])
 
+    const search = location.state?.search || ""
+    const type = location.state?.type || "all"
+
     return (
-        <>
-            <Link
-                to=".."
-                relative="path"
-                className="back-button"
-            >&larr;&nbsp;<span>Back to all vans</span></Link>
-
-
-            <main className="vandetails--main">
-                {van ? <div className="vandetails">
-                    <div className="vandetails--imgParent">
-                        <img src={van.imageUrl} className="vandetails--img" />
+        <div className="vandetails--main">
+            {
+                van ?
+                    <div>
+                        <div className="title--header vandetails--title">
+                            <div>
+                                <h1>{van.name}</h1>
+                                <p><Link to="/">Home</Link>  /  <Link to={`..${search}`} relative="path">Vans</Link>   /  {van.name}</p>
+                            </div>
+                        </div>
+                        <div className="vandetails">
+                            <div className="vandetails--imgParent">
+                                <img src={van.imageUrl} className="vandetails--img" />
+                            </div>
+                            <div className="vandetails--description">
+                                <p className={`van--type ${van.type}`}>{van.type}</p>
+                                <h1>{van.name}</h1>
+                                <p>${van.price}<span>/day</span></p>
+                                <p className="vandetails--para">{van.description}</p>
+                                <Link className="home--link">Rent this van</Link>
+                            </div>
+                        </div>
                     </div>
-                    <div className="vandetails--description">
-                        <h2>{van.name}</h2>
-                        <p className={`van--type ${van.type}`}>{van.type}</p>
-                        <p className="vandetails--price"><strong>${van.price}</strong><span>/day</span></p>
-                        <p className="vandetails--para">{van.description}</p>
-                        <Link className="home--link">Rent this van</Link>
-                    </div>
-                </div> : <h2>Loading...</h2>}
-            </main>
-        </>
+                    : <h2>Loading...</h2>
+            }
+        </div>
     )
 }

@@ -6,10 +6,10 @@ export default function Header() {
     return (
         <header>
             <nav className="navbar">
-                <div className="navbar--sitelogo--parent">
-                    <NavLink to="/" className="navbar--sitelogo">#vanlife</NavLink>
+                <div>
+                    <h1><NavLink to="/" className="navbar--sitelogo">Vanlife</NavLink></h1>
                 </div>
-                <div className="navabar-links">
+                <div className="nav--links">
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/host">Host</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/about">About</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/vans">Vans</NavLink>
