@@ -6,8 +6,8 @@ export default function HostLayout() {
     const styles = {
         fontWeight: "bold",
         paddingBottom: "2px",
-        borderBottom: "2px solid black",
-        color: "#161616"
+        borderBottom: "2px solid white",
+        color: "white"
     }
 
     return(

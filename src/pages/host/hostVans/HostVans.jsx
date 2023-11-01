@@ -18,7 +18,7 @@ export default function HostVans() {
                 </div>
                 <div className="hostvan--infoParent">
                     <h3>{van.name}</h3>
-                    <p>${van.price}/day</p>
+                    <p>${van.price}<span>/day</span></p>
                 </div>
             </div>
         </Link>

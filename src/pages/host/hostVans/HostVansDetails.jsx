@@ -16,11 +16,13 @@ export default function HostVansDetails() {
     }
 
     return (
-        <>
-            <Link
-                to="/host/vans"
-                className="back-button"
-            >&larr;&nbsp;<span>Back to all vans</span></Link>
+        <div className="hostvandetails--page">
+            <div className="title--header hostvans--title">
+                <div>
+                    <h1>{van.name}</h1>
+                    <p><Link to="/">Home</Link>  /  <Link to="/host">Host</Link>  /  <Link to="/host/vans">Vans</Link>  /  {van.name}</p>
+                </div>
+            </div>
 
             <section className="hostvan--detailsParent">
                 <div className="hostvan--details">
@@ -30,11 +32,11 @@ export default function HostVansDetails() {
                     <div className="hostvandetails--info">
                         <p className={`van--type ${van.type}`}>{van.type}</p>
                         <h1>{van.name}</h1>
-                        <h3 className=""><strong>${van.price}</strong><span>/day</span></h3>
+                        <p>${van.price}<span>/day</span></p>
                     </div>
                 </div>
 
-                <header>
+                <header className="hostlayout--nav">
                     <nav>
                         <NavLink end to="." className={({ isActive }) => isActive ? "active--link" : null}>
                             Details
@@ -51,6 +53,6 @@ export default function HostVansDetails() {
 
                 <Outlet context={{ van }} />
             </section>
-        </>
+        </div>
     )
 }
