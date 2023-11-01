@@ -20,7 +20,7 @@ export default function Home() {
                         <p>Vanlife is a way to live a more minimalistic lifestyle, and to be more in tune with nature. Vanlife is a way to live a more adventurous life.</p>
                     </div>
                     <div className="about--image--parent">
-                        <img src="/images/about1.png" className="about--image" />
+                        <img src="/images/home.jpg" className="about--image" />
                     </div>
                 </div>
             </main>

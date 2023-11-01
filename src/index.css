@@ -339,7 +339,7 @@ span {
     }
 
     .vandetails--title {
-        background-position: center top -150px !important;
+        background-position: center top -175px !important;
     }
 
     .vandetails {
@@ -530,8 +530,10 @@ a {
 .title--header div a:hover {
     border-bottom: 2px solid #20242b;
 }
-
-
+.about--info {
+    height: 20%;
+    overflow: hidden;
+}
 .about--texts {
     padding-right: 7%;
 }
@@ -545,7 +547,7 @@ a {
 
 .about--image {
     border-radius: 40px;
-    width: 100%;
+    width: 80%;
     border: 2px solid white;
 }
 
