@@ -69,6 +69,11 @@ span {
     .nav--links a {
         font-size: 20px;
     }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (max-width:1919px) and (min-width:1600px) {
@@ -88,6 +93,11 @@ span {
 
     .nav--links a {
         font-size: 20px;
+    }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -113,6 +123,11 @@ span {
     .nav--links a {
         font-size: 20px;
     }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (max-width:1365px) and (min-width:1280px) {
@@ -136,6 +151,11 @@ span {
 
     .nav--links a {
         font-size: 20px;
+    }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -161,6 +181,11 @@ span {
     .nav--links a {
         font-size: 20px;
     }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (max-width:1023px) and (min-width:600px) {
@@ -185,6 +210,11 @@ span {
     .nav--links a {
         font-size: 20px;
     }
+
+    .vandetails {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media only screen and (max-width:599px) and (min-width:300px) {
@@ -198,6 +228,7 @@ span {
 
     .home--main {
         text-align: center;
+        background-position: center top 0 !important;
     }
 
     .home--texts {
@@ -220,11 +251,11 @@ span {
 
     .about--image {
         width: 50%;
-        border: 0 !important;
+        border: 1px solid white
     }
 
     footer {
-        padding-inline: 10%;
+        padding-inline: 15%;
     }
 
     .navbar--sitelogo {
@@ -240,51 +271,74 @@ span {
         margin-inline: 10px !important;
     }
 
-    .navbar,
+    .navbar {
+        height: 50px !important;
+    }
+
     footer {
         height: 50px !important;
     }
 
-    .about--image--parent {
-        height: 50%;
-    }
-}
-
-@media only screen and (max-width:299px) {
-    h1 {
-        font-size: 1.2rem;
+    .title--header {
+        height: 150px !important;
     }
 
-    p {
-        font-size: 0.7rem;
+    .title--header div {
+        border-radius: 30px !important;
+        top: 40px !important;
     }
 
-    .home--main {
-        text-align: center;
+    .about--title {
+        background-position: center left 0 !important;
     }
 
-    .home--texts {
-        width: 100%;
+    .title--header {
+        margin-bottom: 50px !important;
     }
 
-    .about--info {
+    .vans--title {
+        background-position: center top -40px !important;
+    }
+
+    .filter-types>button {
+        font-size: 10px !important;
+    }
+
+    .vans--tiles {
         display: grid;
-        grid-template-rows: 1fr 1fr
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    .navbar--sitelogo {
-        font-weight: bold;
-        font-size: 20px !important;
+    .van--info h3 {
+        font-size: 12px !important;
     }
 
-    .nav--links a {
-        font-size: 20px;
+    .van--type {
+        font-size: 8px !important;
     }
 
-    .navbar a {
-        margin-inline: 10px !important;
+    span {
+        font-size: 8px !important;
+    }
+
+    .vans--tiles {
+        margin-block: 7% !important;
+    }
+
+    .vandetails--main {
+        margin: 5% 5% 10% !important;
+    }
+
+    .vandetails--title {
+        background-position: center top -200px !important;
+    }
+
+    .vandetails {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
     }
 }
+
 
 /* FOOTER */
 footer {
@@ -355,7 +409,7 @@ a {
     -o-background-size: cover;
     background-position: center top -90px;
     background-size: cover;
-    margin: 3% 5%;
+    margin: 5%;
     padding: 10% 3%;
     display: flex;
     flex-direction: column;
@@ -398,7 +452,7 @@ a {
 
 /* ABOUT */
 .about--main {
-    margin: 40px 100px;
+    margin: 5%;
 }
 
 .title--header {
@@ -425,7 +479,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 60px;
+    padding: 3% 6%;
     position: relative;
     top: 100px;
     border-radius: 40px;
@@ -452,7 +506,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     margin-bottom: 0;
 }
 
@@ -464,7 +517,7 @@ a {
 
 /* VANS */
 .vans--main {
-    margin: 40px 100px;
+    margin: 5%;
 }
 
 .vans--title {
@@ -477,11 +530,11 @@ a {
 }
 
 .filter-types {
-    margin-block: 20px;
+    margin-block: 1%;
 }
 
 .filter-types>button {
-    margin-inline: 20px;
+    margin-inline: 1%;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     cursor: pointer;
@@ -489,7 +542,7 @@ a {
 
 .filter-type {
     background-color: #FFEAD0;
-    padding: 10px 20px;
+    padding: 1% 2%;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -505,15 +558,14 @@ a {
 
 .vans--tiles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    margin-block: 50px;
+    grid-template-columns: repeat(3, 400px);
+    gap: 6%;
+    margin-block: 3%;
 }
 
 .van--tile {
-    width: 400px;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 4%;
+    border-radius: 5%;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -523,9 +575,9 @@ a {
 
 .van--img {
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 5%;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    margin-bottom: 15px;
+    margin-bottom: 2%;
 }
 
 .van--info {
@@ -540,7 +592,7 @@ a {
 }
 
 .van--type {
-    padding: 5px 15px;
+    padding: 1% 5%;
     width: fit-content;
     border-radius: 10px;
     font-size: 16px;
@@ -564,7 +616,7 @@ a {
 
 /* VANDETAILS */
 .vandetails--main {
-    margin: 40px 100px;
+    margin: 5%;
 }
 
 .vandetails--title {
@@ -576,20 +628,17 @@ a {
     background-size: cover;
 }
 
-.vandetails {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
 .vandetails--imgParent {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 10%;
 }
 
 .vandetails--img {
     width: 100%;
     border-radius: 40px;
+    border: 2px solid white;
 }
 
 .vandetails--description {
@@ -600,7 +649,7 @@ a {
 }
 
 .vandetails--para {
-    margin-bottom: 30px;
+    margin-bottom: 3%;
 }
 
 /* HOSTLAYOUT NAVBAR */
