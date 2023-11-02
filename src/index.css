@@ -32,6 +32,11 @@ h1 {
     line-height: 1.5;
 }
 
+h2 {
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 3%;
+}
+
 h3 {
     font-family: 'DM Serif Display', serif;
     margin-block: 10px;
@@ -52,8 +57,21 @@ span {
         font-size: 5rem;
     }
 
+    h2 {
+        font-size: 4.4rem;
+    }
+
     p {
         font-size: 2.3rem;
+    }
+
+    a {
+        font-size: 2.3rem;
+    }
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .about--info {
@@ -73,6 +91,11 @@ span {
     .vandetails {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 }
 
@@ -81,6 +104,17 @@ span {
         font-size: 4rem;
     }
 
+    h2 {
+        font-size: 3rem;
+    }
+
+
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .about--info {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -99,17 +133,36 @@ span {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 @media only screen and (max-width:1599px) and (min-width:1366px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.7rem;
+    }
+
+    h2 {
+        font-size: 3rem;
     }
 
     p {
         font-size: 1.5rem;
     }
 
+    span {
+        font-size: 1.4rem;
+    }
+
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .about--info {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -127,6 +180,15 @@ span {
     .vandetails {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .vandetails--title {
+        background-position: center top -860px !important;
     }
 }
 
@@ -139,6 +201,12 @@ span {
         font-size: 1rem;
     }
 
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .about--info {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -156,21 +224,44 @@ span {
     .vandetails {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 }
 
 @media only screen and (max-width:1279px) and (min-width:1024px) {
     h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
         font-size: 2rem;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.3rem;
+    }
+
+    span {
+        font-size: 1.2rem;
+    }
+
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .about--info {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .about--title {
+        background-position: center left -40px !important;
     }
 
     .navbar--sitelogo {
@@ -185,6 +276,31 @@ span {
     .vandetails {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .vans--title {
+        background-position: center top -160px !important;
+    }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .vans--tiles {
+        margin-block: 7% 20% !important;
+    }
+
+    .hostvans--title {
+        background-position: center top -190px !important;
+    }
+
+    .vandetails--title {
+        background-position: center top -490px !important;
+    }
+
+    .title--header div {
+        top: 80px !important;
     }
 }
 
@@ -194,7 +310,25 @@ span {
     }
 
     p {
+        font-size: 1.1rem;
+    }
+
+    span {
         font-size: 1rem;
+    }
+
+    .home--main {
+        background-position: center top -40px !important;
+    }
+
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .about--title {
+        background-position: center left -40px !important;
     }
 
     .about--info {
@@ -214,6 +348,39 @@ span {
     .vandetails {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .vans--title {
+        background-position: center top -40px !important;
+    }
+
+    .vans--tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .vans--tiles {
+        margin-block: 7% 20% !important;
+    }
+
+    .vandetails--title {
+        background-position: center top -290px !important;
+    }
+
+    .vandetails--imgParent {
+        padding: 2% !important;
+    }
+
+    .vandetails--description {
+        margin-left: 4% !important;
+    }
+
+    .hostvans--title {
+        background-position: center top -50px !important;
+    }
+
+    .title--header div {
+        top: 60px !important;
     }
 }
 
@@ -237,6 +404,12 @@ span {
 
     .home--link {
         font-size: 14px !important;
+    }
+
+    .home--page--section2 {
+        margin: 5%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     .about--info {
@@ -484,6 +657,36 @@ a {
     margin-block: 6%;
 }
 
+.home--page--section2>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10%;
+}
+
+.home--page--section2 div a {
+    padding: 5% 7%;
+    background-color: #262b34;
+    border-radius: 40px;
+    margin-block: 5%;
+    font-weight: bold;
+    width: 200px;
+}
+
+.home--page--section2 div a:hover {
+    background-color: #343943;
+
+    .read--more {
+        color: white;
+        border-bottom: 2px solid white;
+    }
+}
+
+.fa-arrow-right {
+    margin-left: 5%;
+}
+
 /* ABOUT */
 .about--main {
     margin: 5%;
@@ -530,10 +733,12 @@ a {
 .title--header div a:hover {
     border-bottom: 2px solid #20242b;
 }
+
 .about--info {
     height: 20%;
     overflow: hidden;
 }
+
 .about--texts {
     padding-right: 7%;
 }
@@ -803,11 +1008,13 @@ a {
     align-items: center;
     flex-direction: column;
     padding: 5%;
+    text-align: center;
 }
 
 .error--main a {
     padding: 2% 3%;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border-radius: 5px;
+    margin-top: 3%;
 }

@@ -12,6 +12,24 @@ export default function Home() {
                 </div>
             </main>
 
+            <div className="home--page--section2">
+                <div>
+                    <h2>What is #vanlife</h2>
+                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                </div>
+                <div>
+                    <h2>What is #vanlife</h2>
+                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                </div>
+                <div>
+                    <h2>What is #vanlife</h2>
+                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                </div>
+            </div>
+
             <main className="home--about">
                 <div className="about--info">
                     <div className="about--texts home--about--texts">
