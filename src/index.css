@@ -241,7 +241,7 @@ span {
 
     .about--info {
         display: grid;
-        grid-template-rows: 1fr 200px;
+        grid-template-rows: 1fr 1fr;
         margin-top: 50px;
     }
 
@@ -802,11 +802,11 @@ a {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 50px 100px;
+    padding: 5%;
 }
 
 .error--main a {
-    padding: 20px 30px;
+    padding: 2% 3%;
     background-color: black;
     color: white;
     border-radius: 5px;
