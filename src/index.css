@@ -68,6 +68,7 @@ span {
     a {
         font-size: 2.3rem;
     }
+
     .home--page--section2 {
         margin: 5%;
         display: grid;
@@ -190,6 +191,7 @@ span {
     .vandetails--title {
         background-position: center top -960px !important;
     }
+
 }
 
 @media only screen and (max-width:1365px) and (min-width:1280px) {
@@ -230,6 +232,7 @@ span {
         display: grid;
         grid-template-columns: repeat(3, 1fr) !important;
     }
+
 }
 
 @media only screen and (max-width:1279px) and (min-width:1024px) {
@@ -301,6 +304,10 @@ span {
 
     .title--header div {
         top: 80px !important;
+    }
+
+    .login--title {
+        background-position: center top -140px !important;
     }
 }
 
@@ -381,6 +388,10 @@ span {
 
     .title--header div {
         top: 60px !important;
+    }
+
+    .login--title {
+        background-position: center top -50px !important;
     }
 }
 
@@ -544,6 +555,10 @@ span {
     .hostvans--title {
         background-position: center top -60px !important;
     }
+
+    .login--title {
+        background-position: center top -60px !important;
+    }
 }
 
 
@@ -614,7 +629,7 @@ a {
 }
 
 
-.login:hover{
+.login:hover {
     background-color: white;
     color: black;
     border: 2px solid black;
@@ -1040,49 +1055,85 @@ a {
 
 
 /* LOGIN */
+.login--page {
+    margin: 5%;
+}
+
+.login--title {
+    background: url('/images/login.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center top -400px;
+    background-size: cover;
+}
+
 .login-container {
-    margin: 3% 5% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-inline: 27px;
     text-align: center;
-}
-
-.login-container h1 {
-    padding: 2%;
-    margin-bottom: 2%;
-    border: 2px solid white;
+    line-height: 1.6;
 }
 
 .login-form {
+    outline: 2px solid white;
+    outline-offset: 5px;
+    border: 2px dashed white;
+    border-radius: 40px;
+    max-width: 360px;
+    width: 100%;
+    padding: 58px 44px;
+    transition: all 0.3s ease;
+}
+
+.row {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 40%;
+    margin-bottom: 20px;
 }
 
-.login-form>input {
-    background-color: #262b34;
-    margin: 3%;
-    height: 40px;
-    text-indent: 10px;
-    font-family: "Poppins", sans-serif;
-    color: white;
+.row label {
+    font-size: 16px;
+    color: #8086a9;
+    margin-bottom: 1%;
 }
 
-.login-form>input:focus {
+.row input {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid #d6d8e6;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+}
+
+.row input:focus {
     outline: none;
-    background-color: #454d57;
+    box-shadow: inset 2px 2px 5px 0 rgba(42, 45, 48, 0.12);
 }
 
-.login-form>button {
-    background-color: #20242b;
-    border: 2px solid white;
-    border-radius: 30px;
-    height: auto;
-    margin-top: 22px;
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: transparent;
     color: white;
-    font-family: "Poppins", sans-serif;
+    border: 2px solid white;
+    border-radius: 20px;
     cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #2f3237;
+}
+
+@media(max-width: 458px) {
+    form {
+        border: none;
+        box-shadow: none;
+        padding: 20px 0;
+    }
+
 }
