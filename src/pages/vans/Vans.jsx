@@ -1,19 +1,17 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { getVans } from "../../api"
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
+
+export function loader() {
+    return getVans()
+}
 
 export default function Vans() {
-    const [vans, setVans] = React.useState([])
+    const vans = useLoaderData();
 
     const [searchParams, setSearchParams] = useSearchParams()
 
     const typeFilter = searchParams.get("type");
-
-    React.useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
-    }, [])
-
 
     const filteredVans = typeFilter ? vans.filter(van => van.type.toLowerCase() === typeFilter) : vans
 
@@ -65,9 +63,9 @@ export default function Vans() {
                     Clear filter
                 </button>}
             </div>
-            {vans.length > 0 ? <div className="vans--tiles">
+            <div className="vans--tiles">
                 {vanElements}
-            </div> : <h3>Loading...</h3>}
+            </div>
         </main>
     )
 }

@@ -16,17 +16,17 @@ export default function Home() {
                 <div>
                     <h2>What is #vanlife</h2>
                     <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
-                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                    <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
                 <div>
                     <h2>What is #vanlife</h2>
                     <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
-                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                    <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
                 <div>
                     <h2>What is #vanlife</h2>
                     <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
-                    <Link to="about">Read More<i class="fa-solid fa-arrow-right"></i></Link>
+                    <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
             </div>
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 
-
 export default function VanDetails() {
+
     const params = useParams()
     const location = useLocation()
 
@@ -25,7 +25,7 @@ export default function VanDetails() {
                         <div className="title--header vandetails--title">
                             <div>
                                 <h1>{van.name}</h1>
-                                <p><Link to="/">Home</Link>  /  <Link to={`..${search}`} relative="path">Vans</Link>   /  {van.name}</p>
+                                <p><Link to="/">Home</Link>  /  <Link to={`..${search}`} relative="path">{type.charAt(0).toUpperCase()+type.slice(1)} Vans</Link>   /  {van.name}</p>
                             </div>
                         </div>
                         <div className="vandetails">
