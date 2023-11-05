@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
 
+    function handleClick() {
+        localStorage.removeItem("loggedin")
+    }
+
     return (
         <header>
             <nav className="navbar">
@@ -14,6 +18,7 @@ export default function Header() {
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/about">About</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/vans">Vans</NavLink>
                     <NavLink className="login" to="/login">Login</NavLink>
+                    <button onClick={handleClick}>remove</button>
                 </div>
             </nav>
         </header>
