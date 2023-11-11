@@ -98,6 +98,10 @@ span {
         display: grid;
         grid-template-columns: repeat(3, 1fr) !important;
     }
+
+    .trash {
+        font-size: 2.1rem !important;
+    }
 }
 
 @media only screen and (max-width:1919px) and (min-width:1600px) {
@@ -138,6 +142,10 @@ span {
     .vans--tiles {
         display: grid;
         grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .trash {
+        font-size: 2rem !important;
     }
 }
 
@@ -196,6 +204,9 @@ span {
         background-position: center top 0 !important;
     }
 
+    .trash {
+        font-size: 1.8rem !important;
+    }
 }
 
 @media only screen and (max-width:1365px) and (min-width:1280px) {
@@ -237,6 +248,9 @@ span {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 
+    .trash {
+        font-size: 1.8rem !important;
+    }
 }
 
 @media only screen and (max-width:1279px) and (min-width:1024px) {
@@ -313,6 +327,10 @@ span {
     .login-container {
         background-position: center top 0 !important;
     }
+
+    .trash {
+        font-size: 1.8rem !important;
+    }
 }
 
 @media only screen and (max-width:1023px) and (min-width:600px) {
@@ -322,6 +340,10 @@ span {
 
     p {
         font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.3rem !important;
     }
 
     span {
@@ -396,6 +418,10 @@ span {
 
     .login-container {
         background-position: center top 0 !important;
+    }
+
+    .trash {
+        font-size: 1.3rem !important;
     }
 }
 
@@ -563,6 +589,11 @@ span {
     .login-container {
         background-position: center top 0 !important;
     }
+
+    .trash {
+        font-size: 1rem !important;
+    }
+
 }
 
 
@@ -625,8 +656,16 @@ a {
     font-size: 20px;
 }
 
+.nav--links div a {
+    margin-inline: 0;
+}
+
+.nav--links div {
+    margin-inline: 10px;
+}
+
 .login {
-    padding: 2% 4%;
+    padding: 2% 5%;
     border: 2px solid white;
     border-radius: 10px;
     display: flex;
@@ -961,6 +1000,10 @@ a {
     transform: scale(1.01);
 }
 
+.hostvan--infoParent {
+    margin-right: auto;
+}
+
 .hostvan--infoParent>h3 {
     font-size: 30px;
 }
@@ -979,6 +1022,16 @@ a {
     border: 2px solid white;
 }
 
+.trash-icon {
+    padding: 1% 1.5%;
+    border-radius: 25%;
+    background-color: #383f4d;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.trash-icon:hover{
+    background-color: #58647b;
+}
 
 /* HOST VAN DETAILS */
 .hostvandetails--page {
@@ -1036,6 +1089,7 @@ a {
     margin-left: 4%;
     border-radius: 10%;
 }
+
 
 /* ERROR PAGE */
 
@@ -1172,17 +1226,14 @@ a {
     .login-form {
         border: none;
         box-shadow: none;
-        padding: 20px 0;
+        padding: 30px;
     }
 
 }
 
 /* SIGN UP */
 .signin--page {
-    margin-inline: 5%;
-    margin-block-end: 5%;
-    position: relative;
-    top: -50px
+    margin: 5%;
 }
 
 .signin-container {
@@ -1197,6 +1248,7 @@ a {
 .signin-container h1 {
     margin: 2% 4%;
 }
+
 .signin-form {
     background-color: #20242b;
     border-radius: 40px;
@@ -1233,41 +1285,4 @@ a {
 .signin--divParent {
     display: flex;
     justify-content: space-between;
-}
-
-.signin--div1 {
-    width: 500px;
-    background-color: #115E59;
-    height: 200px;
-    margin-inline-start: 7%;
-    border-radius: 40% 60% 60%;
-    border: 2px solid black;
-}
-.signin--img1 {
-    width: 60%;
-    margin-block-start: 3%;
-    margin-inline: 15%;
-    position: relative;
-    bottom: -30px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.signin--div2 {
-    width: 500px;
-    background-color: #E17654;
-    height: 200px;
-    margin-inline-end: 7%;
-    border-radius: 100% 10% 100%;
-    border: 2px solid black;
-}
-
-.signin--img2 {
-    width: 70%;
-    margin-block-start: 3%;
-    margin-inline: 15%;
-    position: relative;
-    bottom: -10px;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }

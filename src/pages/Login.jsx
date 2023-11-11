@@ -1,6 +1,7 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { Form, useLoaderData, redirect, useActionData, useNavigation, Link } from "react-router-dom";
-import { loginUser } from "../api";
+import { auth } from "../api";
 
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
@@ -13,11 +14,9 @@ export async function action({ request }) {
     const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host"
 
     try {
-        const data = await loginUser({ email, password })
+        const userCredentials = await signInWithEmailAndPassword(auth, email, password)
         localStorage.setItem("loggedin", true)
-        const response = redirect(pathname)
-        response.body = true  
-        return response
+        return redirect(pathname)
     } catch(err) {
         return err.message
     }

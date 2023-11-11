@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React from "react";
-import { Form, useActionData } from "react-router-dom";
+import { Form, redirect, useActionData } from "react-router-dom";
 import { auth } from "../api";
 
 export async function action({ request }) {
@@ -8,25 +8,18 @@ export async function action({ request }) {
     const email = formData.get("email")
     const password = formData.get("password")
     const password_confirm = formData.get("password_confirm")
-    console.log(email, password)
 
-    if (password_confirm === password) {
-        async function createUserWithEmailAndPasswordAsync(auth, email, password) {
-            try {
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                console.log(userCredential);
-            } catch (error) {
-                console.log(error);
-            }
+    if(password === password_confirm) {
+        try{
+            const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
+            localStorage.setItem("loggedin", true)
+            return redirect("/host")
+        } catch(err) {
+            return err.message
         }
-
-        createUserWithEmailAndPasswordAsync(auth, email, password);
-    }
-    else {
+    } else {
         return "Password do not match"
     }
-
-    return null
 }
 
 export default function Signin() {
@@ -34,14 +27,6 @@ export default function Signin() {
 
     return (
         <>
-            <div className="signin--divParent">
-                <div className="signin--div1">
-                    <img src="/images/people.svg" className="signin--img1" />
-                </div>
-                <div className="signin--div2">
-                    <img src="/images/Sign-Up-Peeps.png" className="signin--img2" />
-                </div>
-            </div>
             <div className="signin--page">
                 <div className="signin-container">
                     <h1>Sign up to create an account</h1>

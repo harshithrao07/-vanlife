@@ -1,20 +1,54 @@
 import React, { Suspense } from "react";
-import { useParams, Link, useLocation, useLoaderData, defer, Await } from "react-router-dom";
-import { getVan } from "../../api";
+import { Link, useLocation, useLoaderData, defer, Await, useNavigate } from "react-router-dom";
+import { addNewListedVan, auth, getVan } from "../../api";
+import { onAuthStateChanged } from "firebase/auth";
 
 export function loader({ params }) {
     return defer({ van: getVan(params.id) })
 }
 
 export default function VanDetails() {
+    const [authUser, setAuthUser] = React.useState(null)
 
-    const params = useParams()
     const location = useLocation()
+    const navigate = useNavigate()
+    const pathname = window.location.href
 
     const dataPromise = useLoaderData()
 
     const search = location.state?.search || ""
     const type = location.state?.type || "all"
+
+    React.useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user)
+            } else {
+                setAuthUser(null)
+            }
+        })
+
+        return () => {
+            listen()
+        }
+    }, [])
+
+    async function handleClick(vanPromise) {
+        if (authUser)
+        {
+            try {
+                const van = await vanPromise
+                const { email } = authUser
+
+                await addNewListedVan(van,email)
+
+            } catch (error) {
+                console.error("Error handling van promise:", error)
+            }
+        } else {
+            navigate(`/login?message=You must log in first.&redirectTo=${pathname}`)
+        }
+    }
 
     function renderVanElements(van) {
         return (<div>
@@ -33,7 +67,7 @@ export default function VanDetails() {
                     <h1>{van.name}</h1>
                     <p>${van.price}<span>/day</span></p>
                     <p className="vandetails--para">{van.description}</p>
-                    <Link className="home--link">Rent this van</Link>
+                    <button className="home--link" onClick={() => handleClick(dataPromise.van)}>Add to list</button>
                 </div>
             </div>
         </div>)

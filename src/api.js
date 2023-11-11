@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, setDoc, deleteDoc } from "firebase/firestore"
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -18,6 +18,7 @@ export const auth = getAuth(app);
 const db = getFirestore(app)
 
 const vansCollectionRef = collection(db, "vans")
+const listedVansCollectionRef = collection(db, "listedVans")
 
 export async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
@@ -37,8 +38,8 @@ export async function getVan(id) {
     }
 }
 
-export async function getHostVans() {
-    const q = query(vansCollectionRef, where("hostId", "==", "123"))
+export async function getHostVans(email) {
+    const q = query(listedVansCollectionRef, where("host_email", "==", email))
     const querySnapshot = await getDocs(q)
     const dataArr = querySnapshot.docs.map(doc => ({
         ...doc.data(),
@@ -47,19 +48,34 @@ export async function getHostVans() {
     return dataArr
 }
 
-export async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
+export async function addNewListedVan(van, email) {
+    const listenVanSnapshot = await setDoc(doc(db, "listedVans", van.id), {
+        description: van.description,
+        imageUrl: van.imageUrl,
+        name: van.name,
+        price: van.price,
+        type: van.type,
+        host_email: email,
+        id: van.id
+    });
+    console.log("added to listed vans")
+}
 
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
+export async function removeListedVan(id, email) {
+    const q = query(
+        collection(db, "listedVans"),
+        where("host_email", "==", email),
+        where("id", "==", id)
+        );
+
+    try {
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach(async (doc) => {
+            await deleteDoc(doc.ref);
+            console.log(`Document successfully deleted.`);
+        });
+
+    } catch (error) {
+        console.error("Error removing documents:", error);
     }
-
-    return data
 }

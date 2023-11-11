@@ -19,7 +19,6 @@ import FetchError from "./pages/FetchError"
 import Login, { loader as loginLoader, action as loginAction } from "./pages/Login"
 import Signin, { action as signinAction} from "./pages/Signin"
 
-import "../server"
 import { requireAuth } from "../utils"
 
 const router = createBrowserRouter(createRoutesFromElements(
