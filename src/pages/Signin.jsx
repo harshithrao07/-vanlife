@@ -58,7 +58,7 @@ export default function Signin() {
                                 className="signin--input"
                             />
                         </div>
-                        <button className="login--btn"><p>Sign up!</p></button>
+                        <div className="signin--btnParent"><button className="login--btn"><p>Sign up!</p></button></div>
                     </Form>
                 </div>
             </div>

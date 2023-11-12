@@ -1,9 +1,28 @@
 import React, { Suspense } from "react";
 import { Link, useLocation, useLoaderData, defer, Await, useNavigate } from "react-router-dom";
-import { addNewListedVan, auth, getVan } from "../../api";
-import { onAuthStateChanged } from "firebase/auth";
+import { addNewListedVan, checkIfListed, getVan } from "../../api";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-export function loader({ params }) {
+
+const auth = getAuth()
+
+function getEmailFromAuthState() {
+    return new Promise((resolve) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                resolve(user.email)
+                unsubscribe()
+            } else {
+                resolve(null)
+            }
+        });
+    });
+}
+
+let data = null
+export async function loader({ params }) {
+    const email = await getEmailFromAuthState()
+    data = await checkIfListed(email, params.id)
     return defer({ van: getVan(params.id) })
 }
 
@@ -34,16 +53,21 @@ export default function VanDetails() {
     }, [])
 
     async function handleClick(vanPromise) {
-        if (authUser)
-        {
-            try {
-                const van = await vanPromise
-                const { email } = authUser
+        if (authUser) {
+            if (!data) {
+                try {
+                    const van = await vanPromise
+                    const { email } = authUser
 
-                await addNewListedVan(van,email)
+                    await addNewListedVan(van, email)
 
-            } catch (error) {
-                console.error("Error handling van promise:", error)
+                    navigate(".", {replace: true})
+                } catch (error) {
+                    console.error("Error handling van promise:", error)
+                }
+            }
+            else {
+                alert("You have already added this van to your list.")
             }
         } else {
             navigate(`/login?message=You must log in first.&redirectTo=${pathname}`)
@@ -67,7 +91,7 @@ export default function VanDetails() {
                     <h1>{van.name}</h1>
                     <p>${van.price}<span>/day</span></p>
                     <p className="vandetails--para">{van.description}</p>
-                    <button className="home--link" onClick={() => handleClick(dataPromise.van)}>Add to list</button>
+                    <button className="home--link" onClick={() => handleClick(dataPromise.van)}>{data ? <>Added to list&nbsp;&nbsp;<i class="fa-solid fa-heart" style={{ color: "#e72323"}}></i></> : "Add to list"}</button>
                 </div>
             </div>
         </div>)

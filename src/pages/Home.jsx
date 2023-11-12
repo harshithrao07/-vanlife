@@ -7,25 +7,25 @@ export default function Home() {
             <main className="home--main">
                 <div className="home--texts">
                     <h1 className="home--title">You got the travel plans, we got the travel vans.</h1>
-                    <p className="home--para">Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
+                    <p className="home--para">Compact homes, often mobile, for a simplified, eco-friendly lifestyle.</p>
                     <Link className="home--link" to="/vans">Find your van</Link>
                 </div>
             </main>
 
             <div className="home--page--section2">
                 <div>
-                    <h2>What is #vanlife</h2>
-                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <h2>Tiny House Living</h2>
+                    <p>Compact homes, often mobile, for a simplified, eco-friendly lifestyle.</p>
                     <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
                 <div>
-                    <h2>What is #vanlife</h2>
-                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <h2>Digital Nomadism</h2>
+                    <p>Remote work, travel, and location-independent living with technology.</p>
                     <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
                 <div>
-                    <h2>What is #vanlife</h2>
-                    <p>Vanlife is a lifestyle that involves living in a van, truck, or other vehicle.</p>
+                    <h2>Minimalism Movement</h2>
+                    <p>Stress-reducing lifestyle focused on experiences over possessions.</p>
                     <Link to="about">Read More<i className="fa-solid fa-arrow-right"></i></Link>
                 </div>
             </div>

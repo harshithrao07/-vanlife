@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where, setDoc, deleteDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, deleteDoc, addDoc } from "firebase/firestore"
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -42,28 +42,35 @@ export async function getHostVans(email) {
     const q = query(listedVansCollectionRef, where("host_email", "==", email))
     const querySnapshot = await getDocs(q)
     const dataArr = querySnapshot.docs.map(doc => ({
-        ...doc.data(),
-        id: doc.id
+        ...doc.data()
     }))
     return dataArr
 }
 
 export async function addNewListedVan(van, email) {
-    const listenVanSnapshot = await setDoc(doc(db, "listedVans", van.id), {
-        description: van.description,
-        imageUrl: van.imageUrl,
-        name: van.name,
-        price: van.price,
-        type: van.type,
-        host_email: email,
-        id: van.id
-    });
-    console.log("added to listed vans")
+    try {
+        const listenVanSnapshot = await addDoc(listedVansCollectionRef, {
+            description: van.description,
+            imageUrl: van.imageUrl,
+            name: van.name,
+            price: van.price,
+            type: van.type,
+            host_email: email,
+            id: van.id
+        });
+
+        console.log("added to listed vans");
+        return true;
+    } catch (error) {
+        console.error("Error adding document: ", error);
+        return false;
+    }
 }
+
 
 export async function removeListedVan(id, email) {
     const q = query(
-        collection(db, "listedVans"),
+        listedVansCollectionRef,
         where("host_email", "==", email),
         where("id", "==", id)
         );
@@ -77,5 +84,24 @@ export async function removeListedVan(id, email) {
 
     } catch (error) {
         console.error("Error removing documents:", error);
+    }
+}
+
+export async function checkIfListed(email, id) {
+    const q = query(
+        collection(db, "listedVans"),
+        where("host_email", "==", email),
+        where("id", "==", id)
+    );
+    try {
+        const querySnapshot = await getDocs(q)
+        if (querySnapshot.size > 0) {
+            return true; 
+        } else {
+            return false; 
+        }
+    } catch (error) {
+        console.log(error);
+        return false; 
     }
 }

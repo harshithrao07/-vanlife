@@ -40,7 +40,7 @@ export default function Header() {
                     <h1><NavLink to="/" className="navbar--sitelogo">Vanlife</NavLink></h1>
                 </div>
                 <div className="nav--links">
-                    { isLoggedIn && authUser && <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/host/vans">Host</NavLink>}
+                    { isLoggedIn && authUser && <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/host">Host</NavLink>}
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/about">About</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "active--link" : null} to="/vans">Vans</NavLink>
                     {authUser ? <div className="login"><NavLink onClick={handleClick}>Logout</NavLink></div> : <NavLink className="login" to="/login">Login</NavLink>}

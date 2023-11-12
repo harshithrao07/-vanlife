@@ -6,8 +6,6 @@ import Vans , { loader as vansLoader } from "./pages/vans/Vans"
 import VanDetails, { loader as vanDetailsLoader} from "./pages/vans/VanDetails"
 import Layout from "./components/Layout"
 import Dashboard from "./pages/host/Dashboard"
-import Income from "./pages/host/Income"
-import Reviews from "./pages/host/Reviews"
 import HostLayout from "./components/HostLayout"
 import HostVans, { loader as hostVansLoader } from "./pages/host/hostVans/HostVans"
 import HostVansDetails, { loader as hostVanDetailsLoader } from "./pages/host/hostVans/HostVansDetails"
@@ -31,9 +29,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="signin" element={<Signin />} action={signinAction} />
 
         <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} loader={async({request}) => await requireAuth(request)} />
-            <Route path="income" element={<Income />} loader={async ({request}) => await requireAuth(request)} />
-            <Route path="reviews" element={<Reviews />} loader={async ({request}) => await requireAuth(request)} />
+            <Route index element={<Dashboard />} loader={hostVansLoader} />
             <Route path="vans" element={<HostVans />} loader={hostVansLoader} errorElement={<FetchError />} />
             <Route path="vans/:id" element={<HostVansDetails />} loader={hostVanDetailsLoader} errorElement={<FetchError />} >
                 <Route index element={<HostVanInfo />} />

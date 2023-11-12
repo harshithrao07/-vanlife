@@ -1,3 +1,4 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { redirect } from "react-router-dom"
 
 export async function requireAuth(request) {
@@ -9,4 +10,19 @@ export async function requireAuth(request) {
     }
 
     return null
+}
+
+const auth = getAuth()
+
+export function getEmailFromAuthState() {
+    return new Promise((resolve) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                resolve(user.email)
+                unsubscribe()
+            } else {
+                resolve(null)
+            }
+        });
+    });
 }
