@@ -8,11 +8,11 @@ https://the-vanlife.netlify.app/
 
 ## Technologies Used
 
--React
--React Router
--Vite
--Google Firebase (Both Firestore Database and Firebase Authentication)
--Netlify
+-React\
+-React Router\
+-Vite\
+-Google Firebase (Both Firestore Database and Firebase Authentication)\
+-Netlify\
 
 ## Key Features
 
