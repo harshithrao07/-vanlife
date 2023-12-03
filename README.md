@@ -40,6 +40,5 @@ https://the-vanlife.netlify.app/
 ![](./public/screenshots/1.png)
 ![](./public/screenshots/2.png)
 ![](./public/screenshots/3.png)
-![](./public/screenshots/4.gif)
 ![](./public/screenshots/5.png)
 ![](./public/screenshots/6.png)
