@@ -31,7 +31,7 @@ https://the-vanlife.netlify.app/
 
 ## How to Run Locally
 
-**Clone the repository:** git clone https://github.com/harshithrao07/van-rental-app.git \
+**Clone the repository:** git clone https://github.com/harshithrao07/-vanlife.git \
 **Install dependencies:** npm install \
 **Run the application:** npm run dev
 
